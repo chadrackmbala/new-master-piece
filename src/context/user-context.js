@@ -1,5 +1,11 @@
-import { createContext } from "react";
+import { create } from 'zustand'
 
-const UserContext = createContext();
+const useUserStore = create((set) => ({
+    isLogged: false,
+    email: null,
+    upDateIsLogged() {
+        set({ isLogged: true });
+    }
+}))
 
-export default UserContext;
+export default useUserStore;

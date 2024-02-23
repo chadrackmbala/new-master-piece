@@ -6,8 +6,11 @@ import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import Email from '@mui/icons-material/Email';
 import { FormControl, InputLabel, OutlinedInput, IconButton, InputAdornment } from '@mui/material';
 import { useForm } from 'react-hook-form';
+import useUserStore from '../context/user-context';
 
 export default function Form({ onLoginSubmit }) {
+
+  const { isLogged, upDateIsLogged } = useUserStore()
 
   const {
     register,
@@ -19,7 +22,8 @@ export default function Form({ onLoginSubmit }) {
   const onSubmit = (data) => {
     console.log("Succès");
     console.log("Email :", data.email, "Password :", data.password);
-    onLoginSubmit(data.email);
+    upDateIsLogged(isLogged);
+    alert(isLogged);
     reset();
   }
 
