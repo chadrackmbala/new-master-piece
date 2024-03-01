@@ -22,7 +22,7 @@ export default function Form({ onLoginSubmit }) {
   const onSubmit = (data) => {
     console.log("Succès");
     console.log("Email :", data.email, "Password :", data.password);
-    upDateIsLogged(isLogged);
+    upDateIsLogged();
     reset();
   }
 

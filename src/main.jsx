@@ -8,26 +8,26 @@ import Layout from './components/layout'
 import Events from './pages/events'
 import Profile from './pages/profile'
 
-const router = createBrowserRouter([
-	{
-		path: "/",
-		element: <Login />
-	},
-	{
-		path: "/",
-		element: <Layout />,
-		children: [
-			{
-				path: "/profile",
-				element: <Profile />
-			},
-			{
-				path: "/events",
-				element: <Events />
-			},
-		]
-	}
-])
+// const router = createBrowserRouter([
+// 	{
+// 		path: "/",
+// 		element: <Login />
+// 	},
+// 	{
+// 		path: "/",
+// 		element: <Layout />,
+// 		children: [
+// 			{
+// 				path: "/profile",
+// 				element: <Profile />
+// 			},
+// 			{
+// 				path: "/events",
+// 				element: <Events />
+// 			},
+// 		]
+// 	}
+// ])
 
 ReactDOM.createRoot(document.getElementById('root')).render(
 	<React.StrictMode>
