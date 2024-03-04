@@ -8,7 +8,7 @@ export default function SaideBar() {
     return (
         <ul>
             <li className="mb-8 mt-6 ml-5">
-                <NavLink className="nav-link " to="/profile">
+                <NavLink className="nav-link " to="/">
                     <DashboardIcon className="mr-8" /> Dashboard
                 </NavLink>
             </li>
@@ -23,7 +23,7 @@ export default function SaideBar() {
                 </NavLink>
             </li>
             <li className="mb-8 ml-5">
-                <NavLink className="nav-link" to="/profile">
+                <NavLink className="nav-link" to="/settigns">
                     <SettingsIcon className="mr-8" /> Paramètres
                 </NavLink>
             </li>
