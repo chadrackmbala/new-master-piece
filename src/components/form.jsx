@@ -33,7 +33,7 @@ export default function Form({ onLoginSubmit }) {
   return (
     <form className='flex justify-center' onSubmit={handleSubmit(onSubmit)}>
       <div>
-        <h1 className='mb-8 text-2xl'>{email}</h1>
+        <h1 className='mb-8 text-2xl'>Bienvenue</h1>
         <div className='flex  flex-col mb-8'>
           <TextField className='w-60 mb-8'
             id="outlined-password-input"

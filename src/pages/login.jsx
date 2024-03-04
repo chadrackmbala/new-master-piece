@@ -10,7 +10,6 @@ export default function Login({ onLoginSubmit }) {
                 </div>
                 <div className="w-[0.2%]  bg-gradient-to-t" ></div>
                 <div className="w-[45%] h-full  bg-no-repeat  bg-center">
-                {/* <div className="w-[45%] h-full bg-[url('./images/Logo-Minafet2.png')] bg-no-repeat  bg-center"> */}
                 </div>
             </div>
         </div>
