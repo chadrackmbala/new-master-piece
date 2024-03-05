@@ -3,6 +3,7 @@ import DashboardIcon from '@mui/icons-material/Dashboard';
 import PersonIcon from '@mui/icons-material/Person';
 import CelebrationIcon from '@mui/icons-material/Celebration';
 import SettingsIcon from '@mui/icons-material/Settings';
+import Diversity3Icon from '@mui/icons-material/Diversity3';
 
 export default function SaideBar() {
     return (
@@ -23,7 +24,12 @@ export default function SaideBar() {
                 </NavLink>
             </li>
             <li className="mb-8 ml-5">
-                <NavLink className="nav-link" to="/settigns">
+                <NavLink className="nav-link" to="/clubs">
+                    <Diversity3Icon className="mr-8" /> Clubs
+                </NavLink>
+            </li>
+            <li className="mb-8 ml-5">
+                <NavLink className="nav-link" to="/settings">
                     <SettingsIcon className="mr-8" /> Paramètres
                 </NavLink>
             </li>

@@ -7,6 +7,8 @@ import Login from './pages/login'
 import Layout from './components/layout'
 import Events from './pages/events'
 import Profile from './pages/profile'
+import Settings from './pages/setttings'
+import Clubs from './pages/clubs'
 
 const router = createBrowserRouter([
 	{
@@ -24,6 +26,14 @@ const router = createBrowserRouter([
 			{
 				path: "/profile",
 				element: <Profile />
+			},
+			{
+				path: "/clubs",
+				element: <Clubs />
+			},
+			{
+				path: "/settings",
+				element: <Settings />
 			},
 		]
 	}
