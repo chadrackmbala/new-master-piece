@@ -1,7 +1,7 @@
 export default function Clubs() {
-    return(
+    return (
         <>
-            <h2>Clubs</h2>
+            <h2 className="relative top-5 text-center text-4xl">Clubs</h2>
         </>
     )
 }

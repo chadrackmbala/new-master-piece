@@ -14,7 +14,7 @@ export default function App() {
   const { isLogged } = useUserStore()
 
   return (
-    isLogged ? <Layout /> : <Login />
-    // <Layout />
+    // isLogged ? <Layout /> : <Login />
+    <Layout />
   )
 }

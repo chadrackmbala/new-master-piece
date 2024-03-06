@@ -1,11 +1,31 @@
-export default function Actus({ actu }) {
+import React, { useState, useEffect } from 'react';
+import fetchData from "../data/api";
+import Actu from './actu';
+
+export default function Actus() {
+
+    const [data, setData] = useState([]);
+
+    useEffect(() => {
+        const getData = async () => {
+            try {
+                const fetchedData = await fetchData();
+                setData(fetchedData);
+            } catch (error) {
+                console.error(error);
+            }
+        };
+
+        getData();
+    }, []);
+    
     return (
         <>
-            <div className="w - [80 %] ml - [20 %] h - screen">
-                <img src={actu.image} alt="" />
-                <h2>{actu.title}</h2>
-                <p>{actu.description}</p>
-            </div>
+            {
+                data.map((actu, index) => {
+                    return <Actu actu={actu} key={index} />
+                })
+            }
         </>
     )
-} 
+}

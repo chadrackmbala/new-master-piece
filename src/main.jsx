@@ -3,12 +3,14 @@ import ReactDOM from 'react-dom/client'
 import App from './App'
 import './App.css'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import Login from './pages/login'
 import Layout from './components/layout'
 import Events from './pages/events'
 import Profile from './pages/profile'
-import Settings from './pages/setttings'
+import Settings from './pages/settings'
 import Clubs from './pages/clubs'
+import Actus from './components/actus'
+import Actu from './components/actu'
+import Home from './pages/home'
 
 const router = createBrowserRouter([
 	{
@@ -20,6 +22,10 @@ const router = createBrowserRouter([
 		element: <Layout />,
 		children: [
 			{
+				path: "/home",
+				element: <Home />
+			},
+			{
 				path: "/events",
 				element: <Events />
 			},
@@ -29,7 +35,25 @@ const router = createBrowserRouter([
 			},
 			{
 				path: "/clubs",
-				element: <Clubs />
+				element: <Clubs />,
+				children: [
+					{
+						path: "clubs/medicine",
+						element: <Home />
+					},
+					{
+						path: "clubs/law",
+						element: <Events />
+					},
+					{
+						path: "clubs/computer-science",
+						element: <Profile />
+					},
+					{
+						path: "clubs/economy",
+						element: <Profile />
+					},
+				]
 			},
 			{
 				path: "/settings",
