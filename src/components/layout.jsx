@@ -16,7 +16,7 @@ export default function Layout() {
                 </div>
             </div>
             <div className="relative h-screen">
-                <div className="fixed top-16 left-0 pl-2 right-0 h-screen w-[20%] border-solid border-2 border-[#E0E0E0] z-40">
+                <div className="fixed top-16 left-0 pl-2right-0 h-screen w-[20%] border-solid border-2 border-[#E0E0E0] z-40">
                     <SaideBar />
                 </div>
                 <div className="w-[80%] ml-[20%] h-screen ">

@@ -8,13 +8,14 @@ import HomeIcon from '@mui/icons-material/Home';
 import AddIcon from '@mui/icons-material/Add';
 import { useState } from "react";
 import SaideBarClubs from "./said-bar-clubs";
+import CloseIcon from '@mui/icons-material/Close';
 
 export default function SaideBar() {
 
-    const [isToggleClubs, setisToggleClubs] = useState(false);
+    const [isToggleClubs, setIsToggleClubs] = useState(false);
 
     function onToggle() {
-        setisToggleClubs(preview => !preview);
+        setIsToggleClubs(preview => !preview);
     }
 
     return (
@@ -36,7 +37,11 @@ export default function SaideBar() {
             </li>
             <li className="flex rounded w-[230px] h-11 hover:bg-slate-100">
                 <NavLink className="nav-link" to="/clubs">
-                    <Diversity3Icon className="mr-8" /> Clubs <button onClick={onToggle}><AddIcon className="ml-16" /></button>
+                    <Diversity3Icon className="mr-8" /> Clubs <button onClick={onToggle}>
+                        {
+                            isToggleClubs ? <CloseIcon className="ml-16" /> : <AddIcon className="ml-16" />
+                        }
+                    </button>
                 </NavLink>
                 
             </li>
