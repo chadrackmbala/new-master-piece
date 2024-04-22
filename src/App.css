@@ -7,10 +7,35 @@
 body {
     font-family: "Poppins", sans-serif;
     font-style: normal;
+    margin: 0;
+    padding: 0;
 }
 
 .n {
     background-position: center;
     background-size: cover;
 }
+.saide-bar {
+    background-color: #354052;
+    color: #fff;
+    margin-left: 0;
+}
+.link:hover {
+    background-color: #637288;
+}
+.active {
+    background-color: #3D5476;
+    border-radius: 5px;
+    width:  230px;
+}
 
+.link {
+    padding: 5px;
+}
+.capitalize-first-letter::first-letter {
+    text-transform: uppercase;
+  }
+  
+  .capitalize-first-letter {
+    text-transform: lowercase;
+  }

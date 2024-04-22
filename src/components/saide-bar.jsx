@@ -1,5 +1,4 @@
 import { NavLink } from "react-router-dom";
-import DashboardIcon from '@mui/icons-material/Dashboard';
 import PersonIcon from '@mui/icons-material/Person';
 import CelebrationIcon from '@mui/icons-material/Celebration';
 import SettingsIcon from '@mui/icons-material/Settings';
@@ -9,6 +8,9 @@ import AddIcon from '@mui/icons-material/Add';
 import { useState } from "react";
 import SaideBarClubs from "./said-bar-clubs";
 import CloseIcon from '@mui/icons-material/Close';
+import BasicButton from './button';
+import Button from '@mui/material/Button';
+import LogoutIcon from '@mui/icons-material/Logout';
 
 export default function SaideBar() {
 
@@ -19,41 +21,49 @@ export default function SaideBar() {
     }
 
     return (
-        <ul>
-            <li className="flex rounded mt-6 w-[230px] h-11 hover:bg-slate-100">
-                <NavLink className="nav-link " to="/home">
-                    <HomeIcon className="mr-8" /> Home
-                </NavLink>
-            </li>
-            <li className="flex rounded w-[230px] h-11 hover:bg-slate-100">
-                <NavLink className="nav-link" to="/profile">
-                    <PersonIcon className="mr-8" /> Profile
-                </NavLink>
-            </li>
-            <li className="flex rounded w-[230px] h-11 hover:bg-slate-100">
-                <NavLink className="nav-link" to="/events">
-                    <CelebrationIcon className="mr-8" /> Evenements
-                </NavLink>
-            </li>
-            <li className="flex rounded w-[230px] h-11 hover:bg-slate-100">
-                <NavLink className="nav-link" to="/clubs">
-                    <Diversity3Icon className="mr-8" /> Clubs <button onClick={onToggle}>
-                        {
-                            isToggleClubs ? <CloseIcon className="ml-16" /> : <AddIcon className="ml-16" />
-                        }
-                    </button>
-                </NavLink>
-                
-            </li>
-            {
+        <>
+            <ul>
+                <li className="flex rounded mt-3 w-[230px] h-11 link">
+                    <NavLink className="nav-link flex items-center" to="/home">
+                        <HomeIcon className="mr-2" /> Home
+                    </NavLink>
+                </li>
+                <li className="flex rounded w-[230px] h-11 link">
+                    <NavLink className="nav-link flex items-center" to="/profile">
+                        <PersonIcon className="mr-2" /> Profile
+                    </NavLink>
+                </li>
+                <li className="flex rounded w-[230px] h-11 link">
+                    <NavLink className="nav-link flex items-center" to="/events">
+                        <CelebrationIcon className="mr-2" /> Evenements
+                    </NavLink>
+                </li>
+                <li className="flex rounded w-[230px] h-11  link">
+                    <div className="nav-link flex items-center">
+                        <Diversity3Icon className="mr-2" /> Clubs <button onClick={onToggle}>
+                            {
+                                isToggleClubs ? <CloseIcon className="ml-16" /> : <AddIcon className="ml-16" />
+                            }
+                        </button>
+                    </div>
+
+                </li>
+                {
                     isToggleClubs ? <SaideBarClubs /> : null
                 }
 
-            <li className="flex rounded w-[230px] h-11 hover:bg-slate-100">
-                <NavLink className="nav-link" to="/settings">
-                    <SettingsIcon className="mr-8" /> Paramètres
-                </NavLink>
-            </li>
-        </ul>
+                <li className="flex rounded w-[230px] h-11  link">
+                    <NavLink className="nav-link flex items-center" to="/administration">
+                        <SettingsIcon className="mr-2" /> Administration
+                    </NavLink>
+                </li>
+            </ul>
+            <div>
+                <Button variant="contained" className="bg-[#319484] w-56" style={{ textTransform: 'capitalize' }}>Se deconnecter
+                    <LogoutIcon className="ml-2" />
+                </Button>
+            </div>
+        </>
+
     )
 }

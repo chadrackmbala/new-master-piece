@@ -7,24 +7,24 @@ import BarChartIcon from '@mui/icons-material/BarChart';
 export default function SaideBarClubs() {
     return (
         <ul className="ml-3">
-            <li className="flex rounded w-[230px] h-11 hover:bg-slate-100">
-                <NavLink className="nav-link" to="clubs/medicine">
-                    <VaccinesIcon className="mr-8" /> Club de Médecine 
+            <li className="flex rounded w-[200px] h-11 link">
+                <NavLink className="nav-link flex items-center" to="/clubs/medecine">
+                    <VaccinesIcon className="mr-2" /> Club de Médecine 
                 </NavLink>
             </li>
-            <li className="flex rounded w-[230px] h-11 hover:bg-slate-100">
-                <NavLink className="nav-link" to="clubs/law">
-                    <GavelIcon className="mr-8" /> Club de Droit
+            <li className="flex rounded w-[200px] h-11 link club-link">
+                <NavLink className="nav-link flex items-center" to="/clubs/law">
+                    <GavelIcon className="mr-2" /> Club de Droit
                 </NavLink>
             </li>
-            <li className="flex rounded w-[230px] h-11 hover:bg-slate-100">
-                <NavLink className="nav-link" to="clubs/computer-science">
-                    <ComputerIcon className="mr-8" /> Club d'Informatique
+            <li className="flex rounded w-[200px] h-11 link club-link">
+                <NavLink className="nav-link flex items-center" to="/clubs/computer-science">
+                    <ComputerIcon className="mr-2" /> Club d'Informatique
                 </NavLink>
             </li>
-            <li className="flex rounded w-[230px] h-11 hover:bg-slate-100">
-                <NavLink className="nav-link" to="clubs/economy">
-                    <BarChartIcon className="mr-8" /> Club d'Economie
+            <li className="flex rounded w-[200px] h-11 link club-link">
+                <NavLink className="nav-link flex items-center" to="/clubs/economy">
+                    <BarChartIcon className="mr-2" /> Club d'Economie
                 </NavLink>
             </li>
         </ul>

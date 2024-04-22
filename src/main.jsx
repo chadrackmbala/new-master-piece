@@ -10,7 +10,12 @@ import Settings from './pages/settings'
 import Clubs from './pages/clubs'
 import Actus from './components/actus'
 import Actu from './components/actu'
+import Administration from './components/administration'
 import Home from './pages/home'
+import Medecine from './pages/medecine'
+import Law from './pages/law'
+import ComputerScience from './pages/computer-science'
+import Economy from './pages/economy'
 
 const router = createBrowserRouter([
 	{
@@ -38,26 +43,42 @@ const router = createBrowserRouter([
 				element: <Clubs />,
 				children: [
 					{
-						path: "clubs/medicine",
-						element: <Home />
+						path: "medecine",
+						element: <Medecine />
 					},
 					{
-						path: "clubs/law",
-						element: <Events />
+						path: "law",
+						element: <Law />
 					},
 					{
-						path: "clubs/computer-science",
-						element: <Profile />
+						path: "computer-science",
+						element: <ComputerScience />
 					},
 					{
-						path: "clubs/economy",
-						element: <Profile />
+						path: "economy",
+						element: <Economy />
 					},
 				]
 			},
 			{
-				path: "/settings",
-				element: <Settings />
+				path: "/administration",
+				element: <Administration />
+			},
+			{
+				path: "/medecine",
+				element: <Medecine />
+			},
+			{
+				path: "clubs/law",
+				element: <Events />
+			},
+			{
+				path: "clubs/computer-science",
+				element: <Profile />
+			},
+			{
+				path: "clubs/economy",
+				element: <Profile />
 			},
 		]
 	}

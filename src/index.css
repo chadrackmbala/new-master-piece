@@ -30,6 +30,11 @@ body {
   min-height: 100vh;
 }
 
+.active {
+  background-color: #1D9BF0;
+  border-radius: 20px;
+}
+
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
