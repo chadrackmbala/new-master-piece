@@ -7,6 +7,7 @@ import Email from '@mui/icons-material/Email';
 import { FormControl, InputLabel, OutlinedInput, IconButton, InputAdornment } from '@mui/material';
 import { useForm } from 'react-hook-form';
 import useUserStore from '../context/user-context';
+import { useNavigate } from 'react-router-dom';
 
 export default function Form({ onLoginSubmit }) {
 
@@ -19,10 +20,17 @@ export default function Form({ onLoginSubmit }) {
     formState: { errors },
   } = useForm();
 
+  const navigate = useNavigate();
+
+  const handleNavigate = () => {
+    navigate("./home");
+  }
+
   const onSubmit = (data) => {
     console.log("Succès");
     console.log("Email :", data.email, "Password :", data.password);
     upDateIsLogged();
+    handleNavigate();
     reset();
   }
 

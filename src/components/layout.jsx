@@ -13,7 +13,7 @@ export default function Layout() {
                         <SaideBar />
                     </div>
                     <div className="fixed top-0 right-0 bg-[#fff] h-16 w-[80%] flex items-center justify-between pl-10 shadow-xl">
-                        <h2 className="text-black font-medium text-2xl">Loango App</h2>
+                        <h2 className="text-[#319484] font-medium text-2xl">Loango App</h2>
                         <div>
                             <AccountMenu />
                         </div>
