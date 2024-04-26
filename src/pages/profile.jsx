@@ -1,28 +1,33 @@
-import { MessiImg, Cardinal, MatchEvent } from "../images/index"
+import { ChadrackImage } from "../images/index"
 
 export default function Profile() {
     return (
         <>
-            <div className="flex justify-between mr-10 mt-10">
-                <div>
+            <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
+                <div className="relative mt-0">
+                    <img src={ChadrackImage} alt="Photo de profil" class="rounded-full w-48 h-48 border-4 border-white shadow-lg" />
+                    <div className="absolute bottom-1 right-7 w-5 h-5 border-2 border-white rounded-full bg-green-500"></div>
                 </div>
-                <div>
-                    <img class="rounded-full h-24 w-24" src={MessiImg} alt="" />
+                <h2 className="text-4xl">Chadrack Mbala</h2>
+
+                <div className="bg-white  rounded-lg shadow-lg mt-8 p-4 w-3/4">
+                    <div className="flex justify-around">
+                        <div>
+                            <h2 className="text-xl font-semibold">Université</h2>
+                            <p className="">UNIKIN</p>
+                        </div>
+                        <div>
+                            <h2 className="text-xl font-semibold">Faculté</h2>
+                            <p className="">Sciences</p>
+                        </div>
+                        <div>
+                            <h2 className="text-xl font-semibold">Département </h2>
+                            <p className="">Mathématique et Informatique</p>
+                        </div>
+                    </div>
+                    <button className="mt-4 bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600">Éditer le profil</button>
                 </div>
             </div>
-            <div >
-                <h2 className="ml-10 text-4xl">Lionel Messi</h2>
-            </div>
-            <div className="ml-10 mt-10">
-            Lionel Messi, parfois surnommé Leo Messi, <br />
-            né le 24 juin 1987 à Rosario en Argentine, <br />
-            est un footballeur international argentin <br />
-            jouant au poste d'attaquant à l’Inter Miami <br />
-            CF en MLS. Octuple vainqueur du Ballon d'or, <br />
-            un record, il est considéré comme l'un des meilleurs <br />
-            joueurs de football toutes générations confondues.
-            </div>
-            {/* <h2 className="text-[#319484] relative top-5 text-center text-4xl">Profile</h2> */}
         </>
 
     )

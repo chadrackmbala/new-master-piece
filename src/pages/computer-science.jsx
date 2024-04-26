@@ -30,7 +30,7 @@ rows.forEach(element => {
 
 export default function ComputerScience() {
     return (
-        <div className=''>
+        <div className="bg-gray-100">
             <h2 className="text-[#319484] relative top-5 text-center text-4xl">Club d'Informatique</h2><br /><br />
             <div className='flex justify-center'>
             <TableContainer className=" w-3/4" component={Paper}>
