@@ -11,6 +11,9 @@ import CloseIcon from '@mui/icons-material/Close';
 import BasicButton from './button';
 import Button from '@mui/material/Button';
 import LogoutIcon from '@mui/icons-material/Logout';
+import ManageAccountsIcon from '@mui/icons-material/ManageAccounts';
+import ChevronRightIcon from '@mui/icons-material/ChevronRight';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 export default function SaideBar() {
 
@@ -42,7 +45,7 @@ export default function SaideBar() {
                     <div className="nav-link flex items-center">
                         <Diversity3Icon className="mr-2" /> Clubs <button onClick={onToggle}>
                             {
-                                isToggleClubs ? <CloseIcon className="ml-16" /> : <AddIcon className="ml-16" />
+                                isToggleClubs ? <ExpandMoreIcon className="ml-16" /> : <ChevronRightIcon className="ml-16" />
                             }
                         </button>
                     </div>
@@ -54,7 +57,7 @@ export default function SaideBar() {
 
                 <li className="flex rounded w-[230px] h-11  link">
                     <NavLink className="nav-link flex items-center" to="/administration">
-                        <SettingsIcon className="mr-2" /> Administration
+                        <ManageAccountsIcon className="mr-2" /> Administration
                     </NavLink>
                 </li>
             </ul>

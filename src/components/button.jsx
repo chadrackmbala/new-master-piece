@@ -5,6 +5,6 @@ import useUserStore from '../context/user-context';
 export default function BasicButton() {
 
   return (
-      <Button type='submit' className='w-80 h-14' variant="contained">Connexion</Button>
+      <Button type='submit' className='w-60 h-14 text-[#319484]' style={{ textTransform: 'capitalize' }}>Connexion</Button>
   );
 }
