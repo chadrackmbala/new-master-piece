@@ -5,7 +5,7 @@ import AccountMenu from "./account-menu";
 export default function Layout() {
 
     return (
-        <>
+        <div className="transition-all duration-500">
             <div>
                 <div className="h-16 relative flex z-40">
 
@@ -28,7 +28,7 @@ export default function Layout() {
                     <Outlet />
                 </div>
             </div>
-        </>
+        </div>
     )
 }
 

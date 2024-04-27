@@ -100,7 +100,7 @@ export default function Form({ onLoginSubmit }) {
             )}
           </div>
         </div>
-        <BasicButton />
+        <BasicButton textButton="Connexion" styleButton="w-60 h-14" />
         <GoogleButton />
         <div className='flex pl-14'>
           <Link className='text-[#319484] ml-5 hover:underline underline-offset-1 hover:-translate-y-1 hover:scale-110 duration-300'>S'inscrire ?</Link>

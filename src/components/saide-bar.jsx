@@ -42,7 +42,7 @@ export default function SaideBar() {
                     </NavLink>
                 </li>
                 <li className="flex rounded w-[230px] h-11  link">
-                    <div className="nav-link flex items-center">
+                    <div className="nav-link flex items-center ">
                         <Diversity3Icon className="mr-2" /> Clubs <button onClick={onToggle}>
                             {
                                 isToggleClubs ? <ExpandMoreIcon className="ml-16" /> : <ChevronRightIcon className="ml-16" />
