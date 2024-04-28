@@ -9,6 +9,7 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import { TextareaAutosize } from '@mui/base/TextareaAutosize';
 import BasicButton from '../components/button';
+import Register from '../components/register';
 
 function createData(name, calories, fat, carbs, protein) {
     return { name, calories, fat, carbs, protein };
@@ -45,7 +46,7 @@ export default function Administration() {
                             <BasicButton textButton="Publier" styleButton="w-60 h-14" />
                         </div>
                         <h2 className="text-[#319484] relative top-5 text-center text-4xl">Registre des Etudiants</h2><br /><br />
-                        <TableContainer className=" w-11/12" component={Paper}>
+                        {/* <TableContainer className=" w-11/12" component={Paper}>
                             <Table sx={{ minWidth: 650 }} aria-label="simple table">
                                 <TableHead>
                                     <TableRow>
@@ -85,7 +86,8 @@ export default function Administration() {
                                     </TableRow>
                                 </TableFoot>
                             </Table>
-                        </TableContainer>
+                        </TableContainer> */}
+                        <Register />
                     </div>
                 </div>
 

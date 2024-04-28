@@ -16,6 +16,7 @@ import Medecine from './pages/medecine'
 import Law from './pages/law'
 import ComputerScience from './pages/computer-science'
 import Economy from './pages/economy'
+import Registre from './components/register'
 
 const router = createBrowserRouter([
 	{
@@ -65,20 +66,8 @@ const router = createBrowserRouter([
 				element: <Administration />
 			},
 			{
-				path: "/medecine",
-				element: <Medecine />
-			},
-			{
-				path: "clubs/law",
-				element: <Events />
-			},
-			{
-				path: "clubs/computer-science",
-				element: <Profile />
-			},
-			{
-				path: "clubs/economy",
-				element: <Profile />
+				path: "/registre",
+				element: <Registre />
 			},
 		]
 	}
