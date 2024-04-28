@@ -44,7 +44,7 @@ export default function register() {
                                         </div>
                                     </div>
                                     <div className='flex pl-10 mt-10'>
-                                        <Link className='text-[#319484] hover:underline underline-offset-1 hover:-translate-y-1 hover:scale-110 duration-300'>Editer les informations</Link>
+                                        <Link to="/update-data" className='text-[#319484] hover:underline underline-offset-1 hover:-translate-y-1 hover:scale-110 duration-300'>Editer les informations</Link>
                                     </div>
                                 </div>
                             </div>
@@ -81,7 +81,7 @@ export default function register() {
                                         </div>
                                     </div>
                                     <div className='flex pl-10 mt-10'>
-                                        <Link className='text-[#319484] hover:underline underline-offset-1 hover:-translate-y-1 hover:scale-110 duration-300'>Editer les informations</Link>
+                                        <Link to="/update-data" className='text-[#319484] hover:underline underline-offset-1 hover:-translate-y-1 hover:scale-110 duration-300'>Editer les informations</Link>
                                     </div>
                                 </div>
                             </div>

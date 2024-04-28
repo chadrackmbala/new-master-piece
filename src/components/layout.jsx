@@ -23,7 +23,6 @@ export default function Layout() {
             </div>
 
             <div className="relative h-screen">
-
                 <div className="w-[80%] ml-[20%] h-screen ">
                     <Outlet />
                 </div>

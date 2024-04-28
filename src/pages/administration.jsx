@@ -10,6 +10,7 @@ import Paper from '@mui/material/Paper';
 import { TextareaAutosize } from '@mui/base/TextareaAutosize';
 import BasicButton from '../components/button';
 import Register from '../components/register';
+import { Outlet } from 'react-router-dom';
 
 function createData(name, calories, fat, carbs, protein) {
     return { name, calories, fat, carbs, protein };
@@ -31,6 +32,7 @@ rows.forEach(element => {
 });
 
 export default function Administration() {
+
     return (
         <>
             <div className="bg-gray-100 min-h-screen pt-10">
@@ -46,50 +48,10 @@ export default function Administration() {
                             <BasicButton textButton="Publier" styleButton="w-60 h-14" />
                         </div>
                         <h2 className="text-[#319484] relative top-5 text-center text-4xl">Registre des Etudiants</h2><br /><br />
-                        {/* <TableContainer className=" w-11/12" component={Paper}>
-                            <Table sx={{ minWidth: 650 }} aria-label="simple table">
-                                <TableHead>
-                                    <TableRow>
-                                        <TableCell className='font-bold text-sm'>Etudiants</TableCell>
-                                        <TableCell className='font-bold text-sm' align="right">Université</TableCell>
-                                        <TableCell className='font-bold text-sm' align="right">Faculté</TableCell>
-                                        <TableCell className='font-bold text-sm' align="right">Département</TableCell>
-                                        <TableCell className='font-bold text-sm' align="right">Prommotion</TableCell>
-                                        <TableCell className='font-bold text-sm' align="right">E-mail</TableCell>
-                                        <TableCell className='font-bold text-sm' align="right">Téléphone</TableCell>
-                                        <TableCell className='font-bold text-sm' align="right">Domicile</TableCell>
-                                    </TableRow>
-                                </TableHead>
-                                <TableBody>
-                                    {rows.map((row) => (
-                                        <TableRow
-                                            key={row.name}
-                                            sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-                                        >
-                                            <TableCell component="th" scope="row">
-                                                {row.name}
-                                            </TableCell>
-                                            <TableCell align="right">{row.calories}</TableCell>
-                                        </TableRow>
-                                    ))}
-                                </TableBody>
-                                <TableFoot>
-                                    <TableRow>
-                                        <TableCell className='font-bold text-2xl'>Total</TableCell>
-                                        <TableCell className='font-bold text-2xl' align="right">{total}</TableCell>
-                                        <TableCell className='font-bold text-sm' align="right">{total}</TableCell>
-                                        <TableCell className='font-bold text-sm' align="right">{total}</TableCell>
-                                        <TableCell className='font-bold text-sm' align="right">{total}</TableCell>
-                                        <TableCell className='font-bold text-sm' align="right">{total}</TableCell>
-                                        <TableCell className='font-bold text-sm' align="right">{total}</TableCell>
-                                        <TableCell className='font-bold text-sm' align="right">{total}</TableCell>
-                                    </TableRow>
-                                </TableFoot>
-                            </Table>
-                        </TableContainer> */}
                         <Register />
                     </div>
                 </div>
+                        {/* <Outlet /> */}
 
             </div>
 

@@ -17,6 +17,8 @@ import Law from './pages/law'
 import ComputerScience from './pages/computer-science'
 import Economy from './pages/economy'
 import Registre from './components/register'
+import UpdataData from './pages/update-data'
+import Admin from './components/admin'
 
 const router = createBrowserRouter([
 	{
@@ -63,11 +65,18 @@ const router = createBrowserRouter([
 			},
 			{
 				path: "/administration",
-				element: <Administration />
+				element: <Administration />,
+				children: [
+					
+					{
+						path: "admin",
+						element: <Admin />
+					},
+				]
 			},
 			{
-				path: "/registre",
-				element: <Registre />
+				path: "/update-data",
+				element: <UpdataData />
 			},
 		]
 	}
