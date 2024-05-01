@@ -1,5 +1,4 @@
-import ActuDeux from "../components/actu2";
-import Actus from "../components/actus";
+import ActuDeux from "../components/news";
 
 export default function Home() {
     return (

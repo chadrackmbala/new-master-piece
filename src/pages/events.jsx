@@ -1,4 +1,4 @@
-import ActuDeux from "../components/actu2"
+import ActuDeux from "../components/news"
 
 export default function Events() {
     return(
