@@ -10,7 +10,7 @@ import { ChadrackImage, LebronJames } from "../images/index"
 import { Link, useNavigate } from 'react-router-dom';
 import BasicButton from "../components/button";
 
-export default function UpdataData({ onLoginSubmit }) {
+export default function SignUp({ onLoginSubmit }) {
 
     const { email, isLogged, upDateIsLogged } = useUserStore()
 
@@ -43,12 +43,17 @@ export default function UpdataData({ onLoginSubmit }) {
     return (
         <form onSubmit={handleSubmit(onSubmit)}>
             <div className="bg-gray-100 min-h-screen">
-                <div className="flex justify-center mt-10">
-                    <div className="w-[950px] min-h-screen bg-white rounded">
+                <div className="flex justify-center">
+                    <div className="w-[950px] min-h-screen bg-white rounded mt-10">
+                    <h2 className="text-[#319484] font-medium text-center mt-10 text-2xl">Bienvenue dans Loango App</h2>
                         <div className="flex justify-center items-center mt-10 mb-10 gap-20">
                             <div className="flex items-center flex-col flex-wrap">
                                 <div className="absolute">
-                                    <img src={ChadrackImage} alt="" className="rounded-full w-40 h-40 border-4 border-white shadow-lg" />
+                                    <label htmlFor="fileInput">
+                                        Mettez une photo ici
+                                        <input id="fileInput" type="file" />
+                                    </label>
+
                                 </div>
                                 <div className="w-[900px] flex flex-col items-center bg-gray-100 rounded p-5 mt-20">
                                     <div className='flex w-[900px] flex-wrap gap-10 justify-center mt-20'>
@@ -252,7 +257,7 @@ export default function UpdataData({ onLoginSubmit }) {
                                         </div>
                                     </div>
                                     <div className='flex pl-10 mt-10'>
-                                        <BasicButton textButton="Mettre à jour" styleButton="w-60 h-14" />
+                                        <BasicButton textButton="Soumettre" styleButton="w-60 h-14" />
                                     </div>
                                 </div>
                             </div>

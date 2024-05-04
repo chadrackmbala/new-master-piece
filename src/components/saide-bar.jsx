@@ -60,11 +60,6 @@ export default function SaideBar() {
                         <ManageAccountsIcon className="mr-2" /> Administration
                     </NavLink>
                 </li>
-                {/* <li className="flex rounded w-[230px] h-11  link">
-                    <NavLink className="nav-link flex items-center" to="/registre">
-                        <ManageAccountsIcon className="mr-2" /> Registre
-                    </NavLink>
-                </li> */}
             </ul>
             <div>
                 <Button variant="contained" className="bg-[#319484] w-56" style={{ textTransform: 'capitalize' }}>Se deconnecter

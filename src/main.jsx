@@ -19,6 +19,7 @@ import Economy from './pages/economy'
 import Registre from './components/register'
 import UpdataData from './pages/update-data'
 import Admin from './components/admin'
+import SignUp from './pages/sign-up'
 
 const router = createBrowserRouter([
 	{
@@ -79,7 +80,11 @@ const router = createBrowserRouter([
 				element: <UpdataData />
 			},
 		]
-	}
+	},
+	{
+		path: "/sign-up",
+		element: <SignUp />
+	},
 ])
 
 ReactDOM.createRoot(document.getElementById('root')).render(
