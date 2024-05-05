@@ -5,7 +5,7 @@ const useRegisterStore = create((set) => ({
     studentsRegister: [],
     async getRegistersData() { // Définir getNewsData comme une méthode asynchrone
         try {
-            const response = await axios.get('http://localhost:3000/users');
+            const response = await axios.get('/users');
             set({ studentsRegister: response.data.users }); // Mettre à jour le state avec les données reçues
             console.log(response.data.users);
             return studentsRegister;

@@ -1,18 +1,13 @@
 import * as React from 'react';
 import TextField from '@mui/material/TextField';
+import { toast } from 'react-toastify';
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import Email from '@mui/icons-material/Email';
 import { FormControl, InputLabel, OutlinedInput, IconButton, InputAdornment, } from '@mui/material';
 import { useForm } from 'react-hook-form';
-import useUserStore from '../context/user-context';
-import { ChadrackImage, LebronJames } from "../images/index"
-import { Link, useNavigate } from 'react-router-dom';
 import BasicButton from "../components/button";
 import axios from 'axios';
-import Alert from '@mui/material/Alert';
-import AlertTitle from '@mui/material/AlertTitle';
-import Stack from '@mui/material/Stack';
 
 export default function SignUp({ onLoginSubmit }) {
 
@@ -24,8 +19,6 @@ export default function SignUp({ onLoginSubmit }) {
     } = useForm();
 
     const onSubmit = async (data) => {
-        // e.preventDefault();
-        // reset();
 
         let newUser;
 
@@ -44,26 +37,16 @@ export default function SignUp({ onLoginSubmit }) {
             comfirmMotDePasse: data.confirmPassword,
             role: data.role
         }
-console.log(newUser);
         try {
             const response = await axios.post('http://localhost:3000/users', newUser);
-            console.log("ICI : ", response);
-            <Stack sx={{ width: '100%' }} spacing={2}>
-                <Alert severity="success">
-                    <AlertTitle>Success</AlertTitle>
-                    This is a success Alert with an encouraging title.
-                </Alert>
-            </Stack>
+            toast.dismiss();
+            toast.success(response.data?.message || 'Success')
             reset();
         } catch (error) {
+          const response = error.response.data?.message
             console.error("Une erreur s'est produite:", error);
-            <Stack sx={{ width: '100%' }} spacing={2}>
-                <Alert severity="error">
-                    <AlertTitle>Error</AlertTitle>
-                    This is an error Alert with a scary title.
-                </Alert>
-            </Stack>
-            alert("Une erreur s'est produite lors de l'envoi des données");
+            toast.dismiss();
+            toast.error(response || "Une erreur s'est produite lors de l'envoi des données");
         }
         console.log(newUser);
     }

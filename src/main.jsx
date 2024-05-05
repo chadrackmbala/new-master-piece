@@ -1,5 +1,7 @@
 import React from 'react'
+import axios from 'axios'
 import ReactDOM from 'react-dom/client'
+import { ToastContainer } from 'react-toastify'
 import App from './App'
 import './App.css'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
@@ -20,6 +22,8 @@ import Registre from './components/register-table'
 import UpdataData from './pages/update-data'
 import Admin from './components/admin'
 import SignUp from './pages/sign-up'
+import 'react-toastify/dist/ReactToastify.css';
+axios.defaults.baseURL = import.meta.env.VITE_APP_API;
 
 const router = createBrowserRouter([
 	{
@@ -90,5 +94,6 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById('root')).render(
 	<React.StrictMode>
 		<RouterProvider router={router} />
+		<ToastContainer position='top-center' theme='colored' />
 	</React.StrictMode>
 )

@@ -12,7 +12,7 @@ import GoogleButton from './google-button';
 
 export default function Form({ onLoginSubmit }) {
 
-  const { email, isLogged, upDateIsLogged } = useUserStore()
+  const { email, isLogged, upDateIsData, login } = useUserStore()
 
   const {
     register,
@@ -30,9 +30,10 @@ export default function Form({ onLoginSubmit }) {
   const onSubmit = (data) => {
     console.log("Succès");
     console.log("Email :", data.email, "Password :", data.password);
-    upDateIsLogged();
-    handleNavigate();
+   login(data, ()=> {
     reset();
+    handleNavigate();
+   })
   }
 
   const [showPassword, setShowPassword] = React.useState(false);

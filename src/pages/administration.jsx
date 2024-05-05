@@ -57,10 +57,30 @@ export default function Administration() {
                         <h2 className="text-[#319484] relative top-5 text-center text-4xl">Publication de lactivité</h2><br /><br />
                         <div className='w-10/12 h-96 p-5 bg-white rounded-lg flex flex-col justify-center items-center gap-4'>
                             <input type="file" />
+                            <h3>Titre de l'Activité</h3>
                             <TextareaAutosize
                                 className='w-72 rounded-lg border-2 border-gray-300 focus:border-[#319484] outline-none transition-colors duration-300 ease-in-out'
-                                name="inputContent"
-                                {...register("inputContent", {
+                                name="titleContent"
+                                {...register("titleContent", {
+                                    required: "Veuillez écrire un titre svp !",
+                                    maxLength: {
+                                        value: 100,
+                                        message: "Le titre est trop long !"
+                                    },
+                                    pattern: {
+                                        value: /\S/,
+                                        message: "Le titre est trop long !"
+                                    }
+                                })}
+                            />
+                            {errors.titleContent && (
+                                <span style={{ color: "red", fontSize: "12px" }}>{errors.titleContent.message}</span>
+                            )}
+                            <h3>Description de l'Activité</h3>
+                            <TextareaAutosize
+                                className='w-72 rounded-lg border-2 border-gray-300 focus:border-[#319484] outline-none transition-colors duration-300 ease-in-out'
+                                name="descriptionContent"
+                                {...register("descriptionContent", {
                                     required: "Veuillez écrire une description svp !",
                                     maxLength: {
                                         value: 300,
@@ -72,8 +92,8 @@ export default function Administration() {
                                     }
                                 })}
                             />
-                            {errors.inputContent && (
-                                <span style={{ color: "red", fontSize: "12px" }}>{errors.inputContent.message}</span>
+                            {errors.descriptionContent && (
+                                <span style={{ color: "red", fontSize: "12px" }}>{errors.descriptionContent.message}</span>
                             )}
                             <BasicButton textButton="Publier" styleButton="w-60 h-14" />
                         </div>

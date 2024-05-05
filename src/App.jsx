@@ -1,3 +1,5 @@
+import { useEffect } from 'react';
+import axios from 'axios';
 import './App.css'
 import Login from './pages/login'
 import Layout from './components/layout';
@@ -7,8 +9,11 @@ import { Navigate } from 'react-router-dom';
 
 export default function App() {
 
-  const { isLogged } = useUserStore()
+  const { isLogged, token } = useUserStore()
 
+  useEffect(()=> {
+    axios.defaults.headers.common.Authorization = `Bearer ${token}`;
+  }, [])
   return (
     isLogged ? <Layout /> : <Login />
     // <Layout />

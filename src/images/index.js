@@ -3,4 +3,5 @@ export { default as Cardinal } from "./cardinal.jpeg";
 export { default as MatchEvent } from "./match-event.png";
 export { default as ChadrackImage } from "./chadrack.jpg";
 export { default as LebronJames } from "./lebron-james.jpg";
+export { default as Background } from "./background.jpg";
 

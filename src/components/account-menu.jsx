@@ -13,6 +13,7 @@ import Settings from '@mui/icons-material/Settings';
 import Logout from '@mui/icons-material/Logout';
 import { useNavigate } from 'react-router-dom';
 import AvatarComponent from './avatar';
+import useUserStore from '../context/user-context';
 
 export default function AccountMenu() {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -23,18 +24,18 @@ export default function AccountMenu() {
   // const handleClose = () => {
   //   setAnchorEl(null);
   // };
-
+  const { email } = useUserStore()
   const navigate = useNavigate();
 
- 
+
   const handleNavigateProfile = () => {
-      navigate("/profile");
+    navigate("/profile");
   }
   const handleLogOut = () => {
     navigate("/");
-}
+  }
 
-const handleClose = () => {
+  const handleClose = () => {
     setAnchorEl(null);
   };
   return (
@@ -89,6 +90,10 @@ const handleClose = () => {
         transformOrigin={{ horizontal: 'right', vertical: 'top' }}
         anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
       >
+        <MenuItem onClick={handleNavigateProfile}>
+          <Avatar /> {email}
+        </MenuItem>
+        <Divider />
         <MenuItem onClick={handleNavigateProfile}>
           <Avatar /> Profile
         </MenuItem>

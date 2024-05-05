@@ -1,4 +1,5 @@
 import News from "../components/news";
+import { Background } from "../images/index"
 
 export default function Home() {
     return (
@@ -7,6 +8,7 @@ export default function Home() {
             <div className="flex flex-wrap gap-20 justify-center">
                 {/* <Actus /> */}
                 <News />
+                {/* <img src={Background} alt="" className="w-[700px] h-[200px]:" /> */}
             </div>
         </div>
     )
