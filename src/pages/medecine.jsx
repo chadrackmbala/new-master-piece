@@ -35,7 +35,7 @@ export default function Medecine() {
             <div className='flex justify-center'>
             <TableContainer className=" w-3/4" component={Paper}>
                 <Table sx={{ minWidth: 650 }} aria-label="simple table">
-                    <TableHead>
+                    <TableHead className='bg-[#319484]'>
                         <TableRow>
                             <TableCell className='font-bold text-2xl'>Participants</TableCell>
                             <TableCell className='font-bold text-2xl' align="right">Numéros</TableCell>
@@ -54,7 +54,7 @@ export default function Medecine() {
                             </TableRow>
                         ))}
                     </TableBody>
-                    <TableFoot>
+                    <TableFoot className='bg-[#319484]'>
                         <TableRow>
                             <TableCell className='font-bold text-2xl'>Total</TableCell>
                             <TableCell className='font-bold text-2xl' align="right">{total}</TableCell>
