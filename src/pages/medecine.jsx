@@ -36,9 +36,9 @@ export default function Medecine() {
             <TableContainer className=" w-3/4" component={Paper}>
                 <Table sx={{ minWidth: 650 }} aria-label="simple table">
                     <TableHead className='bg-[#319484]'>
-                        <TableRow>
-                            <TableCell className='font-bold text-2xl'>Participants</TableCell>
-                            <TableCell className='font-bold text-2xl' align="right">Numéros</TableCell>
+                        <TableRow className=''>
+                            <TableCell className='font-bold text-2xl text-[#FFF]'>Participants</TableCell>
+                            <TableCell className='font-bold text-2xl text-[#FFF]' align="right">Numéros</TableCell>
                         </TableRow>
                     </TableHead>
                     <TableBody>
@@ -56,8 +56,8 @@ export default function Medecine() {
                     </TableBody>
                     <TableFoot className='bg-[#319484]'>
                         <TableRow>
-                            <TableCell className='font-bold text-2xl'>Total</TableCell>
-                            <TableCell className='font-bold text-2xl' align="right">{total}</TableCell>
+                            <TableCell className='font-bold text-2xl text-[#FFF]'>Total</TableCell>
+                            <TableCell className='font-bold text-2xl text-[#FFF]' align="right">{total}</TableCell>
                         </TableRow>
                     </TableFoot>
                 </Table>
