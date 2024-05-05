@@ -9,7 +9,7 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import { TextareaAutosize } from '@mui/base/TextareaAutosize';
 import BasicButton from '../components/button';
-import Register from '../components/register';
+import Register from '../components/register-table';
 import { Outlet } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 

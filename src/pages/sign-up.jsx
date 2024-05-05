@@ -9,10 +9,12 @@ import useUserStore from '../context/user-context';
 import { ChadrackImage, LebronJames } from "../images/index"
 import { Link, useNavigate } from 'react-router-dom';
 import BasicButton from "../components/button";
+import axios from 'axios';
+import Alert from '@mui/material/Alert';
+import AlertTitle from '@mui/material/AlertTitle';
+import Stack from '@mui/material/Stack';
 
 export default function SignUp({ onLoginSubmit }) {
-
-    const { email, isLogged, upDateIsLogged } = useUserStore()
 
     const {
         register,
@@ -21,31 +23,57 @@ export default function SignUp({ onLoginSubmit }) {
         formState: { errors },
     } = useForm();
 
-    const navigate = useNavigate();
-
-    const handleNavigate = () => {
-        navigate("./home");
-    }
-
-    const onSubmit = (data) => {
-        console.log("Succès");
-        console.log("Email :", data.email, "Password :", data.password);
-        e.preventDefault();
-        upDateIsLogged();
-        handleNavigate();
+    const onSubmit = async (data) => {
+        // e.preventDefault();
         // reset();
+
+        let newUser;
+
+        newUser = {
+            nom: data.nom,
+            postnom: data.postnom,
+            prenom: data.prenom,
+            universite: data.universite,
+            faculte: data.faculte,
+            departement: data.departement,
+            promotion: data.promotion,
+            email: data.email,
+            adresse: data.adresse,
+            telephone: data.telephone,
+            motDePasse: data.password,
+            comfirmMotDePasse: data.confirmPassword,
+            role: data.role
+        }
+console.log(newUser);
+        try {
+            const response = await axios.post('http://localhost:3000/users', newUser);
+            console.log("ICI : ", response);
+            <Stack sx={{ width: '100%' }} spacing={2}>
+                <Alert severity="success">
+                    <AlertTitle>Success</AlertTitle>
+                    This is a success Alert with an encouraging title.
+                </Alert>
+            </Stack>
+            reset();
+        } catch (error) {
+            console.error("Une erreur s'est produite:", error);
+            <Stack sx={{ width: '100%' }} spacing={2}>
+                <Alert severity="error">
+                    <AlertTitle>Error</AlertTitle>
+                    This is an error Alert with a scary title.
+                </Alert>
+            </Stack>
+            alert("Une erreur s'est produite lors de l'envoi des données");
+        }
+        console.log(newUser);
     }
-
-    const [showPassword, setShowPassword] = React.useState(false);
-
-    const handleClickShowPassword = () => setShowPassword((show) => !show);
 
     return (
         <form onSubmit={handleSubmit(onSubmit)}>
             <div className="bg-gray-100 min-h-screen">
                 <div className="flex justify-center">
                     <div className="w-[950px] min-h-screen bg-white rounded mt-10">
-                    <h2 className="text-[#319484] font-medium text-center mt-10 text-2xl">Bienvenue dans Loango App</h2>
+                        <h2 className="text-[#319484] font-medium text-center mt-10 text-2xl">Bienvenue dans Loango App</h2>
                         <div className="flex justify-center items-center mt-10 mb-10 gap-20">
                             <div className="flex items-center flex-col flex-wrap">
                                 <div className="absolute">
@@ -220,7 +248,7 @@ export default function SignUp({ onLoginSubmit }) {
                                                 {...register("email", {
                                                     required: "Veuillez écrire un email svp !",
                                                     maxLength: {
-                                                        value: 20,
+                                                        value: 30,
                                                         message: "Le texte est trop long !"
                                                     },
                                                     pattern: {
@@ -242,7 +270,7 @@ export default function SignUp({ onLoginSubmit }) {
                                                 {...register("adresse", {
                                                     required: "Veuillez écrire une adresse svp !",
                                                     maxLength: {
-                                                        value: 20,
+                                                        value: 50,
                                                         message: "Le texte est trop long !"
                                                     },
                                                     pattern: {
@@ -254,6 +282,94 @@ export default function SignUp({ onLoginSubmit }) {
                                             {errors.adresse && (
                                                 <span style={{ color: "red", fontSize: "12px" }}>{errors.adresse.message}</span>
                                             )}
+                                        </div>
+                                        <div className='flex flex-col gap-1'>
+                                            <TextField className='w-60'
+                                                id="outlined-basic"
+                                                label="Téléphone"
+                                                variant="outlined"
+                                                name='telephone'
+                                                {...register("telephone", {
+                                                    required: "Veuillez écrire une adresse svp !",
+                                                    maxLength: {
+                                                        value: 50,
+                                                        message: "Le texte est trop long !"
+                                                    },
+                                                    pattern: {
+                                                        value: /\S/,
+                                                        message: "Le texte est trop long !"
+                                                    }
+                                                })}
+                                            />
+                                            {errors.telephone && (
+                                                <span style={{ color: "red", fontSize: "12px" }}>{errors.telephone.message}</span>
+                                            )}
+                                        </div>
+                                        <div className='flex flex-col gap-1'>
+                                            <TextField className='w-60'
+                                                id="outlined-basic"
+                                                label="Mot de passe"
+                                                variant="outlined"
+                                                name='password'
+                                                {...register("password", {
+                                                    required: "Veuillez écrire une adresse svp !",
+                                                    maxLength: {
+                                                        value: 50,
+                                                        message: "Le texte est trop long !"
+                                                    },
+                                                    pattern: {
+                                                        value: /\S/,
+                                                        message: "Le texte est trop long !"
+                                                    }
+                                                })}
+                                            />
+                                            {errors.password && (
+                                                <span style={{ color: "red", fontSize: "12px" }}>{errors.password.message}</span>
+                                            )}
+                                            <div className='flex flex-col gap-1'>
+                                                <TextField className='w-60'
+                                                    id="outlined-basic"
+                                                    label="Confirmer le mot de passe"
+                                                    variant="outlined"
+                                                    name='confirmPassword'
+                                                    {...register("confirmPassword", {
+                                                        required: "Veuillez écrire une adresse svp !",
+                                                        maxLength: {
+                                                            value: 50,
+                                                            message: "Le numéro n'est pas valide !"
+                                                        },
+                                                        pattern: {
+                                                            value: /\S/,
+                                                            message: "Le numéro n'est pas valide !"
+                                                        }
+                                                    })}
+                                                />
+                                                {errors.confirmPassword && (
+                                                    <span style={{ color: "red", fontSize: "12px" }}>{errors.confirmPassword.message}</span>
+                                                )}
+                                            </div>
+                                            <div className='flex flex-col gap-1'>
+                                                <TextField className='w-60'
+                                                    id="outlined-basic"
+                                                    label="Role"
+                                                    variant="outlined"
+                                                    name='role'
+                                                    {...register("role", {
+                                                        required: "Veuillez écrire une adresse svp !",
+                                                        maxLength: {
+                                                            value: 50,
+                                                            message: "Le numéro n'est pas valide !"
+                                                        },
+                                                        pattern: {
+                                                            value: /\S/,
+                                                            message: "Le numéro n'est pas valide !"
+                                                        }
+                                                    })}
+                                                />
+                                                {errors.role && (
+                                                    <span style={{ color: "red", fontSize: "12px" }}>{errors.role.message}</span>
+                                                )}
+                                            </div>
                                         </div>
                                     </div>
                                     <div className='flex pl-10 mt-10'>
