@@ -25,6 +25,7 @@ export default function AccountMenu() {
   //   setAnchorEl(null);
   // };
   const { email } = useUserStore()
+  console.log(email);
   const navigate = useNavigate();
 
 

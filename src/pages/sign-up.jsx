@@ -7,9 +7,14 @@ import Email from '@mui/icons-material/Email';
 import { FormControl, InputLabel, OutlinedInput, IconButton, InputAdornment, } from '@mui/material';
 import { useForm } from 'react-hook-form';
 import BasicButton from "../components/button";
+import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 export default function SignUp({ onLoginSubmit }) {
+
+  const handleNavigate = () => {
+    navigate("./home");
+  }
 
     const {
         register,
@@ -42,6 +47,7 @@ export default function SignUp({ onLoginSubmit }) {
             toast.dismiss();
             toast.success(response.data?.message || 'Success')
             reset();
+            handleNavigate();
         } catch (error) {
           const response = error.response.data?.message
             console.error("Une erreur s'est produite:", error);

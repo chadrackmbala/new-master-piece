@@ -11,7 +11,7 @@ const useUserStore = create((set) => ({
     login: async (data, callback) => {
         set({ loading: true });
         try {
-           const response = await axios.post('/auth', data);
+           const response = await axios.post('https://masterpiece-backend.onrender.com/auth', data);
            set({ loading: false,  isLogged: true, token: response.data.token, user: response.data.user  })
            axios.defaults.headers.common.Authorization = `Bearer ${response.data.token}`;
            toast.success('Vous etes connecte!');
