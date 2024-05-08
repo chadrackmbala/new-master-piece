@@ -7,7 +7,7 @@ const useRegisterStore = create((set) => ({
         try {
             const response = await axios.get('/users');
             set({ studentsRegister: response.data.users }); // Mettre à jour le state avec les données reçues
-            console.log(response.data.users);
+            console.log(response.data.userData);
             return studentsRegister;
         } catch (error) {
             console.error('Error fetching re data:', error);
