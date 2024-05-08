@@ -29,7 +29,6 @@ export default function Form({ onLoginSubmit }) {
 
   const onSubmit = (data) => {
     console.log("Succès");
-    upDateIsData(data.email);
     console.log("Email :", data.email, "Password :", data.password);
    login(data, ()=> {
     reset();
