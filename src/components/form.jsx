@@ -33,6 +33,7 @@ export default function Form({ onLoginSubmit }) {
    login(data, ()=> {
     reset();
     handleNavigate();
+    upDateIsData(data.email);
    })
   }
 
