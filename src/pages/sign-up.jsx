@@ -43,7 +43,7 @@ export default function SignUp({ onLoginSubmit }) {
             role: data.role
         }
         try {
-            const response = await axios.post('http://localhost:3000/users', newUser);
+            const response = await axios.post('/users', newUser);
             toast.dismiss();
             toast.success(response.data?.message || 'Success')
             reset();

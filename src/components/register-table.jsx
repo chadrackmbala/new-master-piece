@@ -9,6 +9,7 @@ import useRegisterStore from "../context/register-context";
 export default function RegisterTable() {
 
     const { studentsRegister, getRegistersData } = useRegisterStore();
+    console.log("ICI THERE", studentsRegister);
 
     useEffect(() => {
         getRegistersData();
