@@ -16,6 +16,5 @@ export default function App() {
   }, [])
   return (
     isLogged ? <Layout /> : <Login />
-    // <Layout />
   )
 }

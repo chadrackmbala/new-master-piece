@@ -9,12 +9,13 @@ const useUserStore = create((set) => ({
     user: null,
     loading: false,
     login: async (data, callback) => {
+        
         set({ loading: true });
         try {
            const response = await axios.post('/auth', data);
            set({ loading: false,  isLogged: true, token: response.data.token, user: response.data.user  })
            axios.defaults.headers.common.Authorization = `Bearer ${response.data.token}`;
-           toast.success('Vous etes connecte!');
+           toast.success('Vous etes connecté avec succès ! 🎉');
            callback();
         } catch (error) {
             set({ loading: false });
@@ -27,6 +28,7 @@ const useUserStore = create((set) => ({
     },
     setLogOut() {
         set({ isLogged: false, email: null });
+        console.log(isLogged);
     }
 }))
 
