@@ -21,10 +21,12 @@ export default function AccountMenu() {
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
+
+  const { email, setLogOut } = useUserStore();
+
   // const handleClose = () => {
   //   setAnchorEl(null);
   // };
-  const { email } = useUserStore()
   console.log(email);
   const navigate = useNavigate();
 
@@ -34,6 +36,7 @@ export default function AccountMenu() {
   }
   const handleLogOut = () => {
     navigate("/");
+    setLogOut();
   }
 
   const handleClose = () => {

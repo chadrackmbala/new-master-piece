@@ -24,6 +24,9 @@ const useUserStore = create((set) => ({
     },
     upDateIsData(email) {
         set({ isLogged: true, email: email });
+    },
+    setLogOut() {
+        set({ isLogged: false, email: null });
     }
 }))
 

@@ -12,7 +12,7 @@ import GoogleButton from './google-button';
 
 export default function Form({ onLoginSubmit }) {
 
-  const { email, isLogged, upDateIsData, login } = useUserStore()
+  const { email, isLogged, upDateIsData, login } = useUserStore();
 
   const {
     register,
@@ -30,11 +30,11 @@ export default function Form({ onLoginSubmit }) {
   const onSubmit = (data) => {
     console.log("Succès");
     console.log("Email :", data.email, "Password :", data.password);
-   login(data, ()=> {
-    reset();
-    handleNavigate();
-    upDateIsData(data.email);
-   })
+    login(data, () => {
+      reset();
+      handleNavigate();
+      upDateIsData(data.email);
+    })
   }
 
   const [showPassword, setShowPassword] = React.useState(false);
@@ -44,7 +44,6 @@ export default function Form({ onLoginSubmit }) {
   return (
     <form className='flex justify-center' onSubmit={handleSubmit(onSubmit)}>
       <div className='flex flex-col justify-center'>
-        {/* <h1 className='mb-4 text-2xl text-[#319484]'>Loango App</h1> */}
         <div className='flex gap-3 flex-col mt-5 mb-5'>
           <div className='flex flex-col'>
             <TextField
